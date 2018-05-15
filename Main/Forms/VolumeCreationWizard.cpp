@@ -153,7 +153,8 @@ namespace TrueCrypt
 				{
 					pageTitle = LangString["SIZE_HIDVOL_TITLE"];
 					pageText = LangString["SIZE_HELP_HIDDEN_VOL"] + L"\n\n" + _("Please note that if your operating system does not allocate files from the beginning of the free space, the maximum possible hidden volume size may be much smaller than the size of the free space on the outer volume. This not a bug in TrueCrypt but a limitation of the operating system.");
-					freeSpaceText = StringFormatter (_("Maximum possible hidden volume size for this volume is {0}."), Gui->SizeToString (MaxHiddenVolumeSize));
+					wxString tfreeSpaceText = StringFormatter (_("Maximum possible hidden volume size for this volume is {0}."), Gui->SizeToString (MaxHiddenVolumeSize));
+					freeSpaceText = tfreeSpaceText;
 				}
 				else
 				{
