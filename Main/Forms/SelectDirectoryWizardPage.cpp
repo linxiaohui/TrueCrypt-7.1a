@@ -16,7 +16,7 @@ namespace TrueCrypt
 	{
 		if (!DirectoryTextCtrl->IsEmpty())
 		{
-			return FilesystemPath (DirectoryTextCtrl->GetValue()).IsDirectory();
+			return FilesystemPath ((string)DirectoryTextCtrl->GetValue()).IsDirectory();
 		}
 
 		return false;

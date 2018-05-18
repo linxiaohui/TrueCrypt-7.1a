@@ -45,13 +45,13 @@ namespace TrueCrypt
 		strBuf.CopyFrom (res);
 		return string (reinterpret_cast <char *> (strBuf.Ptr()));
 #else
-		static const char LanguageXml[] =
+		static const unsigned char LanguageXml[] =
 		{
 #			include "Common/Language.xml.h"
 			, 0
 		};
 
-		return string (LanguageXml);
+		return string ((char*)LanguageXml);
 #endif
 	}
 
