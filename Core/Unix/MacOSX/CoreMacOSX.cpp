@@ -210,6 +210,6 @@ namespace TrueCrypt
 		}
 	}
 
-	auto_ptr <CoreBase> Core (new CoreServiceProxy <CoreMacOSX>);
-	auto_ptr <CoreBase> CoreDirect (new CoreMacOSX);
+	unique_ptr <CoreBase> Core (new CoreServiceProxy <CoreMacOSX>);
+	unique_ptr <CoreBase> CoreDirect (new CoreMacOSX);
 }

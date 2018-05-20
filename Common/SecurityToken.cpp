@@ -506,7 +506,7 @@ namespace TrueCrypt
 		}
 	}
 
-	void SecurityToken::InitLibrary (const string &pkcs11LibraryPath, auto_ptr <GetPinFunctor> pinCallback, auto_ptr <SendExceptionFunctor> warningCallback)
+	void SecurityToken::InitLibrary (const string &pkcs11LibraryPath, unique_ptr <GetPinFunctor> pinCallback, unique_ptr <SendExceptionFunctor> warningCallback)
 	{
 		if (Initialized)
 			CloseLibrary();
@@ -536,8 +536,8 @@ namespace TrueCrypt
 		if (status != CKR_OK)
 			throw Pkcs11Exception (status);
 
-		PinCallback = pinCallback;
-		WarningCallback = warningCallback;
+		PinCallback = std::move(pinCallback);
+		WarningCallback = std::move(warningCallback);
 
 		Initialized = true;
 	}
@@ -716,8 +716,8 @@ namespace TrueCrypt
 	}
 #endif // TC_HEADER_Common_Exception
 
-	auto_ptr <GetPinFunctor> SecurityToken::PinCallback;
-	auto_ptr <SendExceptionFunctor> SecurityToken::WarningCallback;
+	unique_ptr <GetPinFunctor> SecurityToken::PinCallback;
+	unique_ptr <SendExceptionFunctor> SecurityToken::WarningCallback;
 
 	bool SecurityToken::Initialized;
 	CK_FUNCTION_LIST_PTR SecurityToken::Pkcs11Functions;

@@ -50,7 +50,7 @@ namespace TrueCrypt
 
 		KeyfilesPanel *DefaultKeyfilesPanel;
 		int LastVirtualKeyPressed; 
-		auto_ptr <wxTimer> mTimer;
+		unique_ptr <wxTimer> mTimer;
 		UserPreferences Preferences;
 		bool RestoreValidatorBell;
 		HotkeyList UnregisteredHotkeys;

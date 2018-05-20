@@ -166,7 +166,7 @@ namespace TrueCrypt
 
 		if (!exOutput.empty())
 		{
-			auto_ptr <Serializable> deserializedObject;
+			unique_ptr <Serializable> deserializedObject;
 			Exception *deserializedException = nullptr;
 
 			try

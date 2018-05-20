@@ -1021,7 +1021,7 @@ namespace TrueCrypt
 
 		try
 		{
-			SecurityToken::InitLibrary (Preferences.SecurityTokenModule, auto_ptr <GetPinFunctor> (new PinRequestHandler (this)), auto_ptr <SendExceptionFunctor> (new WarningHandler (this)));
+			SecurityToken::InitLibrary (Preferences.SecurityTokenModule, unique_ptr <GetPinFunctor> (new PinRequestHandler (this)), unique_ptr <SendExceptionFunctor> (new WarningHandler (this)));
 		}
 		catch (Exception &e)
 		{

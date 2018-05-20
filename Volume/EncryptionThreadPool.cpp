@@ -121,9 +121,9 @@ namespace TrueCrypt
 
 		firstFragmentWorkItem->ItemCompletedEvent.Wait();
 		
-		auto_ptr <Exception> itemException;
+		unique_ptr <Exception> itemException;
 		if (firstFragmentWorkItem->ItemException.get())
-			itemException = firstFragmentWorkItem->ItemException;
+			itemException = std::move(firstFragmentWorkItem->ItemException);
 
 		firstFragmentWorkItem->State.Set (WorkItem::State::Free);
 		WorkItemCompletedEvent.Signal();

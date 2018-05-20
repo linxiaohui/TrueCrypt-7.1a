@@ -62,8 +62,8 @@ namespace TrueCrypt
 
 	protected:
 		int CurrentIndentLevel;
-		auto_ptr <wxMemoryOutputStream> MemOutStream;
-		auto_ptr <wxTextOutputStream> TextOutStream;
+		unique_ptr <wxMemoryOutputStream> MemOutStream;
+		unique_ptr <wxTextOutputStream> TextOutStream;
 		File OutFile;
 
 	private:

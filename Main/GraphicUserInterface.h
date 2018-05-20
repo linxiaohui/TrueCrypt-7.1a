@@ -118,10 +118,10 @@ namespace TrueCrypt
 		wxFrame *ActiveFrame;
 		bool BackgroundMode;
 #ifdef TC_WINDOWS
-		auto_ptr <wxDDEServer> DDEServer;
+		unique_ptr <wxDDEServer> DDEServer;
 #endif
 		wxFrame *mMainFrame;
-		auto_ptr <wxSingleInstanceChecker> SingleInstanceChecker;
+		unique_ptr <wxSingleInstanceChecker> SingleInstanceChecker;
 
 	private:
 		GraphicUserInterface (const GraphicUserInterface &);

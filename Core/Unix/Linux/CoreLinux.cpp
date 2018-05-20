@@ -472,6 +472,6 @@ namespace TrueCrypt
 		}
 	}
 
-	auto_ptr <CoreBase> Core (new CoreServiceProxy <CoreLinux>);
-	auto_ptr <CoreBase> CoreDirect (new CoreLinux);
+	unique_ptr <CoreBase> Core (new CoreServiceProxy <CoreLinux>);
+	unique_ptr <CoreBase> CoreDirect (new CoreLinux);
 }

@@ -88,7 +88,7 @@ namespace TrueCrypt
 		CommandLineInterface &operator= (const CommandLineInterface &);
 	};
 
-	extern auto_ptr <CommandLineInterface> CmdLine;
+	extern unique_ptr <CommandLineInterface> CmdLine;
 }
 
 #endif // TC_HEADER_Main_CommandInterface

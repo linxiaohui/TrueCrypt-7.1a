@@ -579,5 +579,5 @@ namespace TrueCrypt
 		return filteredVolumes;
 	}
 
-	auto_ptr <CommandLineInterface> CmdLine;
+	unique_ptr <CommandLineInterface> CmdLine;
 }

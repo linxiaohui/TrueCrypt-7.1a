@@ -9316,7 +9316,7 @@ BOOL InitSecurityTokenLibrary ()
 
 	try
 	{
-		SecurityToken::InitLibrary (SecurityTokenLibraryPath, auto_ptr <GetPinFunctor> (new PinRequestHandler), auto_ptr <SendExceptionFunctor> (new WarningHandler));
+		SecurityToken::InitLibrary (SecurityTokenLibraryPath, unique_ptr <GetPinFunctor> (new PinRequestHandler), unique_ptr <SendExceptionFunctor> (new WarningHandler));
 	}
 	catch (Exception &e)
 	{
