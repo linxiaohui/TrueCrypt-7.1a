@@ -54,7 +54,10 @@ namespace TrueCrypt
 
 					foreach (const string &arg, arguments)
 					{
-						args[argIndex++] = const_cast <char*> (arg.c_str());
+						args[argIndex] = new char[arg.length()+1];
+						args[argIndex][arg.length()]=0;
+						memcpy(args[argIndex], const_cast <char*> (arg.c_str()), arg.length());
+						argIndex++;
 					}
 					args[argIndex] = nullptr;
 
