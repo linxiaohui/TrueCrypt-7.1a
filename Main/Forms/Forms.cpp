@@ -525,7 +525,9 @@ WizardFrameBase::WizardFrameBase( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	PageTitleStaticText = new wxStaticText( MainPanel, wxID_ANY, _("Page Title"), wxDefaultPosition, wxDefaultSize, 0 );
 	PageTitleStaticText->Wrap( -1 );
-	PageTitleStaticText->SetFont( wxFont( 16, 70, 90, 90, false, wxT("Times New Roman") ) );
+	//Pixel = DPI * Point / 72
+	//96*16/72=21
+	PageTitleStaticText->SetFont( wxFont( 21,wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL,false, wxT("Times New Roman") ) );
 	
 	bSizer126->Add( PageTitleStaticText, 0, wxALL, 5 );
 	
@@ -925,7 +927,7 @@ EncryptionTestDialogBase::EncryptionTestDialogBase( wxWindow* parent, wxWindowID
 	sbSizer38 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Key (hexadecimal)") ), wxVERTICAL );
 	
 	KeyTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	KeyTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier") ) );
+	KeyTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier") ) );
 	
 	sbSizer38->Add( KeyTextCtrl, 1, wxALL|wxEXPAND, 5 );
 	
@@ -954,7 +956,7 @@ EncryptionTestDialogBase::EncryptionTestDialogBase( wxWindow* parent, wxWindowID
 	sbSizer39->Add( m_staticText45, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
 	
 	SecondaryKeyTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	SecondaryKeyTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier") ) );
+	SecondaryKeyTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(),  wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier") ) );
 	
 	sbSizer39->Add( SecondaryKeyTextCtrl, 0, wxEXPAND|wxALL, 5 );
 	
@@ -980,7 +982,7 @@ EncryptionTestDialogBase::EncryptionTestDialogBase( wxWindow* parent, wxWindowID
 	sbSizer40 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Plaintext (hexadecimal)") ), wxVERTICAL );
 	
 	PlainTextTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	PlainTextTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier") ) );
+	PlainTextTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(),  wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier") ) );
 	
 	sbSizer40->Add( PlainTextTextCtrl, 0, wxALL|wxEXPAND, 5 );
 	
@@ -990,7 +992,7 @@ EncryptionTestDialogBase::EncryptionTestDialogBase( wxWindow* parent, wxWindowID
 	sbSizer41 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Ciphertext (hexadecimal)") ), wxVERTICAL );
 	
 	CipherTextTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	CipherTextTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier") ) );
+	CipherTextTextCtrl->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, wxT("Courier") ) );
 	
 	sbSizer41->Add( CipherTextTextCtrl, 0, wxALL|wxEXPAND, 5 );
 	
@@ -1258,7 +1260,7 @@ KeyfileGeneratorDialogBase::KeyfileGeneratorDialogBase( wxWindow* parent, wxWind
 	
 	RandomPoolStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	RandomPoolStaticText->Wrap( -1 );
-	RandomPoolStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
+	RandomPoolStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier New") ) );
 	
 	bSizer147->Add( RandomPoolStaticText, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
@@ -2101,7 +2103,7 @@ RandomPoolEnrichmentDialogBase::RandomPoolEnrichmentDialogBase( wxWindow* parent
 	
 	RandomPoolStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	RandomPoolStaticText->Wrap( -1 );
-	RandomPoolStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
+	RandomPoolStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier New") ) );
 	
 	bSizer147->Add( RandomPoolStaticText, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
@@ -2597,7 +2599,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	
 	RandomPoolSampleStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	RandomPoolSampleStaticText->Wrap( -1 );
-	RandomPoolSampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
+	RandomPoolSampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(),  wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier New") ) );
 	
 	bSizer126->Add( RandomPoolSampleStaticText, 0, wxEXPAND|wxTOP|wxRIGHT|wxALIGN_BOTTOM, 7 );
 	
@@ -2615,7 +2617,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	
 	HeaderKeySampleStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	HeaderKeySampleStaticText->Wrap( -1 );
-	HeaderKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
+	HeaderKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(),  wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier New") ) );
 	
 	fgSizer5->Add( HeaderKeySampleStaticText, 0, wxALIGN_BOTTOM|wxEXPAND|wxTOP|wxRIGHT, 2 );
 	
@@ -2626,7 +2628,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	
 	MasterKeySampleStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	MasterKeySampleStaticText->Wrap( -1 );
-	MasterKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
+	MasterKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPixelSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Courier New") ) );
 	
 	fgSizer5->Add( MasterKeySampleStaticText, 0, wxEXPAND|wxALIGN_BOTTOM|wxTOP|wxRIGHT, 2 );
 	
