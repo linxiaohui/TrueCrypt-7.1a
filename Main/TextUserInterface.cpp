@@ -763,8 +763,8 @@ namespace TrueCrypt
 
 				ShowString (wxString::Format (L"\rDone: %7.3f%%  Speed: %9s  Left: %s         ",
 					100.0 - double (options->Size - progress.SizeDone) / (double (options->Size) / 100.0),
-					speed > 0 ? SpeedToString (speed).c_str() : L" ",
-					speed > 0 ? TimeSpanToString ((options->Size - progress.SizeDone) / speed).c_str() : L""));
+					speed > 0 ? SpeedToString (speed).c_str() :wxString(L" ").c_str(),
+					speed > 0 ? TimeSpanToString ((options->Size - progress.SizeDone) / speed).c_str() : wxString(L"").c_str()));
 			}
 
 			Thread::Sleep (100);
